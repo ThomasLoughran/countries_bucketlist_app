@@ -12,19 +12,20 @@ const CountriesList = ({countriesList}) => {
             </>
         )
     } 
+
     const countryNames = countriesList.map((country) => {
             return(
                 <div className="country">
                     {Country(country)}
                 </div>
-                
             )
         })
+    
     return(
-        <>
+        <div className="countriesList">
             <h3>This is a list of countries</h3>
             {countryNames}
-        </>
+        </div>
     )       
 }
 

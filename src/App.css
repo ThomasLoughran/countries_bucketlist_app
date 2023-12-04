@@ -40,3 +40,14 @@
 body {
   margin: 15px;
 }
+
+.countriesList {
+  display: inline-block;
+  width: 50%;
+}
+
+.visitedCountriesList {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}

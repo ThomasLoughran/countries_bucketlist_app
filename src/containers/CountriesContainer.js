@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import CountriesList from "../components/CountriesList";
+import VisitedCountriesList from '../components/VisitedCountriesList';
 
 const CountriesContainer = () => {
 
@@ -15,11 +16,16 @@ const CountriesContainer = () => {
         loadCountriesData();
     }, [])
 
+    useEffect(() => {
+
+    }, [])
+
     return(
-        <>
-            <h2>This is a countries Container</h2>
+        <div className='main'>
+            
             {countriesList ? <CountriesList countriesList={countriesList}/> : <p>Loading countries...</p>}
-        </>
+            {countriesList ? <VisitedCountriesList countriesList={countriesList}/> : <p>Loading countries...</p>}
+        </div>
     )
 }
 
