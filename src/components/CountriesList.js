@@ -1,3 +1,4 @@
+import { useState } from "react";
 
 const CountriesList = ({
     countriesList, 
@@ -6,6 +7,8 @@ const CountriesList = ({
     setVisitedCountriesList
 }) => {
 
+    let isChecked = false;
+
     const handleCheckBox = (country) => {
         // add the country to the list of countries that have been visited
         setVisitedCountriesList([...visitedCountriesList, country]);
@@ -13,6 +16,7 @@ const CountriesList = ({
         setCountriesList(countriesList.filter(
             (thisCountry) => thisCountry !== country)
         )
+        isChecked = false;
         console.log(country.name.common)
     }
 
@@ -21,7 +25,9 @@ const CountriesList = ({
             <>
                 <input 
                     type="checkbox"
+                    checked={isChecked}
                     onInput={(e) => {
+                        
                         handleCheckBox(country)
                     }}
                 ></input>
