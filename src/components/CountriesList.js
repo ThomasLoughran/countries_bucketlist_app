@@ -7,13 +7,12 @@ const CountriesList = ({
 }) => {
 
     const handleCheckBox = (country) => {
-        console.log("box ticked");
         // add the country to the list of countries that have been visited
         setVisitedCountriesList([...visitedCountriesList, country]);
         // remove the country from the list of countries that haven't been visited
-        // setCountriesList([countriesList.filter(
-        //     (thisCountry) => thisCountry !== country)
-        // ])
+        setCountriesList(countriesList.filter(
+            (thisCountry) => thisCountry !== country)
+        )
         console.log(country.name.common)
     }
 
