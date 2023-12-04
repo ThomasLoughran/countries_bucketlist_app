@@ -1,12 +1,32 @@
 
-const CountriesList = ({countriesList}) => {
+const CountriesList = ({
+    countriesList, 
+    setCountriesList, 
+    visitedCountriesList,
+    setVisitedCountriesList
+}) => {
 
-    
+    const handleCheckBox = (country) => {
+        console.log("box ticked");
+        // add the country to the list of countries that have been visited
+        setVisitedCountriesList([...visitedCountriesList, country]);
+        // remove the country from the list of countries that haven't been visited
+        // setCountriesList([countriesList.filter(
+        //     (thisCountry) => thisCountry !== country)
+        // ])
+        console.log(country.name.common)
+    }
 
     const Country = (country) => {
         return(
             <>
-                <input type="checkbox"></input>
+                <input 
+                    type="checkbox"
+                    onInput={(e) => {
+                        handleCheckBox(country)
+                    }}
+                ></input>
+                
                 {country.name.common}
                 {country.flag}
             </>
