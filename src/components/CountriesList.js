@@ -5,15 +5,19 @@ const CountriesList = ({countriesList}) => {
 
     const Country = (country) => {
         return(
-            <div>
+            <>
+                <input type="checkbox"></input>
                 {country.name.common}
                 {country.flag}
-            </div>
+            </>
         )
     } 
     const countryNames = countriesList.map((country) => {
             return(
-                Country(country)
+                <div className="country">
+                    {Country(country)}
+                </div>
+                
             )
         })
     return(
